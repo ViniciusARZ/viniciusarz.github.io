@@ -1,0 +1,232 @@
+.timeline .h3 {
+  color: var(--primary);
+}
+:root{
+  --bg: #121212;
+  --surface: #1a1a1a;
+  --surface-2: #141414;
+  --text: #ffffff;
+  --muted: #93979f;
+  --border: #ffffff1f;
+  --primary: #e66a1f;
+  --primary-ink: #3b210c;
+  --secondary: #fabc9b;
+  --radius: 14px;
+  --container: 1120px;
+  --space-2xs: .25rem;
+  --space-xs: .5rem;
+  --space-s: .75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color: var(--text);
+  background: radial-gradient(1000px 600px at 80% -10%, #e34e0941 0, transparent 60%), var(--bg);
+  background-attachment: fixed;
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--container);margin-inline:auto;padding-inline: var(--space-l)}
+.section{padding: var(--space-3xl) 0}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+.display{font-family: "Onest", Inter, system-ui, sans-serif; font-weight:700; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height:1.1; letter-spacing:-0.01em}
+.h2{font-size: clamp(1.5rem, 3vw, 2.25rem); line-height:1.2; font-weight:700}
+.h3{font-size:1.125rem;line-height:1.35;font-weight:600}
+.lead{font-size:1.125rem;color:var(--muted);}
+.lead br {
+  display: block;
+  content: "";
+  margin-top: 1.5em;
+}
+
+.stack{display:flex;flex-direction:column}
+.gap-m{gap: var(--space-m)}
+.gap-l{gap: var(--space-l)}
+
+.grid-2{display:grid;grid-template-columns:1fr;gap: var(--space-2xl)}
+.grid-3{display:grid;grid-template-columns:1fr;gap: var(--space-l)}
+.grid-3.tight{gap: var(--space-m)}
+.align-center{align-items:center}
+@media (min-width: 880px){
+  .grid-2{grid-template-columns: 1.1fr .9fr}
+  .grid-3{grid-template-columns: repeat(3, 1fr)}
+}
+
+.site-header{
+  position:sticky; top:0; z-index:100;
+  backdrop-filter:saturate(160%) blur(8px);
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:.625rem}
+.brand-name{font-weight:700;letter-spacing:.2px}
+.site-nav{display:flex;align-items:center;gap: var(--space-l)}
+.site-nav ul{display:none;list-style:none;margin:0;padding:0;gap: var(--space-m)}
+.site-nav .btn{display:none}
+.nav-toggle{display:inline-flex;flex-direction:column;gap:4px;background:transparent;border:0;cursor:pointer}
+.nav-toggle .bar{width:22px;height:2px;background:var(--text);border-radius:2px}
+
+@media (min-width: 880px){
+  .site-nav ul{display:flex}
+  .site-nav .btn{display:inline-flex}
+  .nav-toggle{display:none}
+}
+
+.hero .hero-media{background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); overflow:hidden}
+
+.eyebrow{font-size:.875rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: .7rem 1rem; border-radius: calc(var(--radius) - 4px);
+  border:1px solid var(--border); background: var(--surface-2);
+  font-weight:600; transition: transform .06s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover{transform: translateY(-1px)}
+.btn.primary{background: var(--primary); color: var(--primary-ink); border-color: color-mix(in oklab, var(--primary) 60%, black)}
+.btn.ghost{background: transparent}
+
+.card{
+  padding: var(--space-l);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border:1px solid var(--border);
+}
+.icon-circle{
+  width:40px; height:40px; border-radius:999px;
+  display:grid;place-items:center; background: #ad581333; border:1px solid var(--border); margin-bottom: .5rem;
+}
+.icon-circle img{width:20px;height:20px}
+
+.showcase .media img{border-radius: var(--radius); border:1px solid var(--border)}
+
+.checklist{padding-left:1.25rem}
+.checklist li{margin:.25rem 0}
+
+.stats .stat{display:grid; gap:.25rem; text-align:center; background: var(--surface); padding: var(--space-l); border-radius: var(--radius); border:1px solid var(--border)}
+.stats .stat-value{font-family:"Onest", Inter, sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight:700}
+.stats .stat-label{color:var(--muted)}
+
+.logo-row{display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--space-l); align-items:center}
+.logo-row img{filter: grayscale(1) brightness(.9); opacity:.8}
+
+.quote{margin-top: var(--space-2xl); padding: var(--space-xl); border-radius: var(--radius); background: var(--surface); border:1px solid var(--border)}
+.quote p{font-size:1.125rem}
+.quote footer{color:var(--muted)}
+
+.cta .cta-inner{
+  display:flex; align-items:center; justify-content:space-between; gap: var(--space-l);
+  background: linear-gradient(0deg, #ffffff14, #ffffff14), var(--surface);
+  border:1px solid var(--border); border-radius: var(--radius); padding: var(--space-xl);
+}
+
+.site-footer{border-top:1px solid var(--border); padding-top: var(--space-2xl)}
+.footer-grid{display:grid; grid-template-columns: 1fr; gap: var(--space-xl); padding-bottom: var(--space-2xl)}
+.footer-nav{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-xl)}
+.footer-title{font-weight:700; margin:0 0 .25rem 0}
+.footer-nav a{color: var(--muted); margin:.25rem 0}
+.legal{padding: var(--space-m) 0; border-top:1px solid var(--border)}
+
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:8px;top:8px;width:auto;height:auto;background:var(--text);color:var(--bg);padding:.5rem;border-radius:8px}
+
+/* Mobile Nav */
+.site-nav.open ul, .site-nav.open .btn{display:flex}
+.site-nav.open{position:fixed;inset:64px 0 0 0;background:color-mix(in oklab, var(--bg) 90%, black);flex-direction:column;gap: var(--space-l);padding: var(--space-xl);border-top:1px solid var(--border)}
+
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-l);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-shadow: var(--shadow-card);
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-top: var(--space-l);
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-l);
+  overflow-y: auto;
+}
+
+@media (max-width: 880px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .hero-image {
+    margin-top: 0;
+  }
+
+  .content {
+    padding: var(--space-m);
+  }
+}
+
+/* Keep brand and socials on the same row, vertically centered */
+.footer-grid {
+  display: flex;
+  align-items: center;          /* same vertical line for brand + socials */
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Right-align socials on desktop; keep your existing spacing */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;                 /* label ↔ icons */
+  margin: 0;                    /* avoid extra vertical space */
+}
+.footer-socials .social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;                    /* icon spacing stays the same */
+}
+
+/* Mobile: stack and center */
+@media (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-socials {
+    justify-content: center;
+  }
+}

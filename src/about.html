@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About Vinícius Ramos" />
+    <title>About – Vinícius Ramos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Mount point -->
+    <div id="site-header"></div>
+
+    <!-- Header loader -->
+    <script>
+    (async function() {
+      const mount = document.getElementById('site-header');
+      if (!mount) return;
+
+      const res = await fetch('header.html');
+      mount.innerHTML = await res.text();
+
+      const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      mount.querySelectorAll('nav a').forEach(a => {
+        if ((a.getAttribute('href') || '').toLowerCase() === path) a.classList.add('active');
+      });
+
+      const btn = mount.querySelector('#nav-toggle');
+      const nav = mount.querySelector('#primary-nav');
+      if (btn && nav) {
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('open', !expanded);
+        });
+      }
+    })();
+    </script>
+    <main id="main">
+      <!-- About page content starts below, no hero section -->
+      <section class="section features">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Expertise</h2>
+          </div>
+          <div class="grid-3 cards">
+            <article class="card"><h3 class="h7">Machine Learning Development, Engineering and Automation</h3></article>
+            <article class="card"><h3 class="h7">API Development for Data Solutions</h3></article>
+            <article class="card"><h3 class="h7">Gen AI and LLM Solutions (Agentic Workflows, RAG, Evaluation)</h3></article>
+          </div>
+        </div>
+      </section>
+      <section class="section features">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Experience</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">Collage Group</h3>
+                <p class="muted">Data Scientist <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">Aug 2023 – Present</span></p>
+                <p>Worked on a cross-functional role with Syndicated and Custom Research teams, developing internal tools to speed up and improve analytics, statistical tests, and advanced analysis that did not exist in the company before.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">FIAP</h3>
+                <p class="muted">Professor, Decision Intelligence <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">Feb 2024 – Sep 2024</span></p>
+                <p>Personally invited by FIAP's MBA Programs Coordinator to teach Decision Intelligence in the "MBA Program of Digital Transformation Cognitive Business." Led the Decision Intelligence discipline, covering Decision Science and related skills for professionals in digital transformation.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">Awari</h3>
+                <p class="muted">Data Science & Analytics Mentor <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">May 2023 – Mar 2025</span></p>
+                <p>Mentored 40+ students 1-on-1, helping them achieve career goals and new positions in Data Analytics, Data Science, and Data Engineering. Provided career and development guidance, answered questions, and shared knowledge to support mentees' next steps in the data field.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">Slang</h3>
+                <p class="muted">Senior Business Planning & Analytics Analyst <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">July 2021 – July 2023</span></p>
+                <p>Started in a junior position and helped found the Business Planning & Analytics area. Grew to a senior role, responsible for strategy design and planning with directors of Finance, Marketing, and Business Development. Developed new processes, CRM, acquisition funnel, and digital marketing structure, performing cross-source analytics to improve decision-making.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">Orbe Consultoria Internacional</h3>
+                <p class="muted">Market Intelligence <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">April 2019 – August 2020</span></p>
+                <p>Worked while pursuing a bachelor's in International Affairs, developing solutions to prospect and research which countries had the best probability of success for each client's product and audience. Developed the OKR system and implemented the digital marketing strategy that led to 3 major awards in the Junior Enterprise field.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section features">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Education</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2025 - Present</div>
+              <div class="timeline-content">
+                  <h3 class="h3">Masters in Computer Science</h3>
+                  <p class="muted">Universidade Estadual Paulista (UNESP) - Institute of Biosciences, Letters, and Exact Sciences (IBILCE - UNESP) <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">2025 - Present</span></p>
+                <p>Master of Science program in Computer Science offered by the São Paulo State University (UNESP), one of Brazil's leading public universities. Developed within the Postgraduate Program in Computer Science (PPGCC), which emphasizes research in applied computing and systems.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2024 - 2025</div>
+              <div class="timeline-content">
+                  <h3 class="h3">MBA focused in Data Science</h3>
+                  <p class="muted">Universidade de São Paulo (USP) - Institute of Mathematical and Computer Sciences (ICMC- USP) <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">2024 - 2025</span></p>
+                <p>MBA Program coordinated by the Research Center of Applied Mathematics (CeMEAI - USP) in the Institute of Mathematical and Computer Sciences (ICMC- USP), one of the most renewed Universities in Brazil and Latin America.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020 - 2021</div>
+              <div class="timeline-content">
+                  <h3 class="h3">Exchange Program in Statistics</h3>
+                  <p class="muted">Universidade de Campinas (UNICAMP) - Faculty of Applied Sciences <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">2020 - 2021</span></p>
+                <p>Selected by an Exchange Program as Special Student. Studied R (Tidyverse, MongoDBLite, SQLite, ggplot2) and Python (pandas, numpy, matplot) for Statistical Analysis and testing.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020 - 2020</div>
+              <div class="timeline-content">
+                  <h3 class="h3">Specialization Course in Advanced Business Analytics</h3>
+                  <p class="muted">University of Colorado, Boulder (Online) <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">2020</span></p>
+                <p>Business Analytics online specialization focused on solving problems with Statistics using SQL and Data Modelling.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2019 - 2022</div>
+              <div class="timeline-content">
+                  <h3 class="h3">Bachelors in International Affairs</h3>
+                  <p class="muted">Universidade do Estado de São Paulo (UNESP) - Faculty of Human and Social Sciences <span aria-hidden="true" style="padding:0 0.5em;">&#124;</span> <span class="timeline-date">2019 - 2022</span></p>
+                <p>Founded a Quantitative Methods study group to study statistics and data analysis in research. Co-founded the Research Nucleus on Ethics, Philosophy and Social Theories. FAPESP scholarship for research in political science, philosophy, and religion in Thomas Hobbes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        if (footerPlaceholder) {
+          fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+              footerPlaceholder.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+        }
+      });
+    </script>
+  </body>
+</html>

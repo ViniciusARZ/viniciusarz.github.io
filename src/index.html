@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Home page placeholder" />
+    <title>Home</title>
+
+    <!-- Fonts (Inter, Onest) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Mount point -->
+    <div id="site-header"></div>
+
+    <!-- Header loader -->
+    <script>
+    (async function() {
+      const mount = document.getElementById('site-header');
+      if (!mount) return;
+
+      const res = await fetch('header.html');
+      mount.innerHTML = await res.text();
+
+      const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      mount.querySelectorAll('nav a').forEach(a => {
+        if ((a.getAttribute('href') || '').toLowerCase() === path) a.classList.add('active');
+      });
+
+      const btn = mount.querySelector('#nav-toggle');
+      const nav = mount.querySelector('#primary-nav');
+      if (btn && nav) {
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('open', !expanded);
+        });
+      }
+    })();
+    </script>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="section hero">
+        <div class="container grid-2">
+          <div class="stack gap-l">
+            <span class="eyebrow">Decision Intelligence & Market Research</span>
+            <h1 class="display">Building solutions for you to harness the power of Decision Intelligence</h1>
+            <p class="lead">Multidisciplinary Data Scientist. More than 5 years working with Machine Learning, Research, and Project Management for international businesses. Specialized in lookalike and recommendation models, building products for marketers, insights and strategy teams.<br> Fluent and Working in English, Spanish, and Portuguese</p>
+            <div class="actions">
+              <a class="btn primary" href="about.html">About Me</a>
+            </div>
+          </div>
+          <div class="media hero-media" role="img" aria-label="Profile picture">
+            <img src="assets/profile_pic.jpg" alt="Profile picture" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Single Card Section -->
+      <section class="section">
+        <div class="container">
+          <article class="card">
+            <h3 class="h3">Worked with Fortune 500 and Key Players</h3>
+            <p>Developed projects and solutions for Disney, Ford, Amazon, Best Buy, U.S. Bank, Lowe's, Victoria's Secret, Red Bull, Celsius, Haleon, NHL, Adsmovil and many more — plus venture capitals such as Positive Ventures, ALIVE, and DILA Capital.</p>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- Features Grid -->
+      <section class="section features">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">About Me</h2>
+            <p class="muted">International Relations bachelor, self-taught coding and statistics, later got a post graduation degree in Computer Science and currently pursuing my Masters. I have worked in Data Science for international businesses, focusing on machine learning, segmentation models and more recently in Artificial Intelligence with GenAI workflows. My main role is helping brands understand consumer behavior and drive favorability and purchase intent.</p>
+          </div>
+          <div class="grid-3 cards">
+            <article class="card">
+              <div class="icon-circle"><img src="assets/statistics.png" alt=""></div>
+              <h3 class="h3">Machine Learning</h3>
+              <p>Developed an AutoML Pipeline to automate model tuning, cross-validation, and evaluation with a custom composite score and penalty system. Allowing classification model training and a similarity search classifier algorithm written from scratch for research data.</p>
+            </article>
+            <article class="card">
+              <div class="icon-circle"><img src="assets/zoom_lupa.png" alt=""></div>
+              <h3 class="h3">Artificial Intelligence</h3>
+              <p>Designed and shipped agentic workflows: research summarization for a large-scale insights dashboard, complex RAG on internal content with time-sensitive retrieval for reliability and clear actions, and text-to-SQL so non-technical users can query data in natural language.</p>
+            </article>
+            <article class="card">
+              <div class="icon-circle"><img src="assets/cloud.png" alt=""></div>
+              <h3 class="h3">API and Package Development</h3>
+              <p>Developed multiple internal packages (wrappers, ETLs) for applying Machine Learning and AI into production ready solutions. Delivery in FastAPI deployments in AWS Lambda, EC2 instances and Airflow to enable Backend teams to integrate it solutions into the product.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Showcase / Alternating -->
+      <section class="section showcase">
+        <div class="container grid-2 align-center reverse">
+          <div class="media">
+            <img src="assets/wide-media.jpg" alt="" />
+          </div>
+          <div class="stack gap-m">
+            <h2 class="h2">Showcase headline placeholder</h2>
+            <p>Supporting paragraph placeholder with a bit more detail, matching the cadence of the source layout.</p>
+            <ul class="checklist">
+              <li>Bullet placeholder item</li>
+              <li>Another bullet placeholder item</li>
+              <li>Final bullet placeholder item</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="section stats">
+        <div class="container grid-3 tight">
+          <div class="stat">
+            <div class="stat-value">24K+</div>
+            <div class="stat-label">Placeholder metric</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Placeholder metric</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">7.1x</div>
+            <div class="stat-label">Placeholder metric</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials / Logos -->
+      <section class="section testimonials">
+        <div class="container">
+          <div class="logo-row">
+            <img src="assets/logo-a.svg" alt="Logo A" />
+            <img src="assets/logo-b.svg" alt="Logo B" />
+            <img src="assets/logo-c.svg" alt="Logo C" />
+            <img src="assets/logo-d.svg" alt="Logo D" />
+          </div>
+          <blockquote class="quote">
+            <p>“Short testimonial placeholder that fits the visual balance from the source design.”</p>
+            <footer>— Placeholder Name, Role</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- CTA Banner -->
+      <section class="section cta">
+        <div class="container cta-inner">
+          <h2 class="h2">CTA headline placeholder</h2>
+          <a class="btn primary" href="#">Get started</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script>
+    (async function(){
+      const mount = document.getElementById('site-footer');
+      if (!mount) return;
+      const res = await fetch('footer.html');
+      mount.innerHTML = await res.text();
+      const y = mount.querySelector('#year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+    </script>
+  </body>
+</html>
