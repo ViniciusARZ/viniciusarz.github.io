@@ -67,6 +67,38 @@
           </div>
         </div>
       </section>
+      <section id="product-news">
+          <div class="container">
+            <h2>Projects I worked on</h2>
+              <div class="carousel">
+                <button class="carousel-arrow left" aria-label="Previous" onclick="showProduct(-1)">&#8592;</button>
+                <div class="carousel-track">
+                  <div class="product-card" data-index="0">
+                    <img src="assets/PR/collage_askcollage_aijournal.png" alt="Ask Collage AI Journal" />
+                    <div class="product-info">
+                      <a href="https://aijourn.com/beyond-the-what-why-ai-must-go-deeper-to-unlock-culturally-grounded-consumer-insights/" target="_blank">Ask Collage</a>
+                      <p>AI Agentic Workflow I lead and developed from scratch for a Chat with time-bounded RAG pipeline and serverless deployment.</p>
+                    </div>
+                  </div>
+                  <div class="product-card" data-index="1" style="display:none;">
+                    <img src="assets/PR/collage_askcollage_globenewswire.png" alt="Ask Collage GlobeNewswire" />
+                    <div class="product-info">
+                      <a href="https://www.globenewswire.com/news-release/2025/10/28/3175486/0/en/Introducing-Ask-Collage-the-Next-Level-of-AI-Powered-Cultural-Intelligence.html" target="_blank">Ask Collage</a>
+                      <p>AI Agentic Workflow I lead and developed from scratch for a Chat with time-bounded RAG pipeline and serverless deployment.</p>
+                    </div>
+                  </div>
+                  <div class="product-card" data-index="1" style="display:none;">
+                    <img src="assets/PR/slang_seriesa.png" alt="Slang Series A Round" />
+                    <div class="product-info">
+                      <a href="https://www.alive-ventures.com/post/slang-closes-a-us-14-million-series-a-funding-round-led-by-dila-capital-and-alive-ventures" target="_blank">Slang Series A Round</a>
+                      <p>Worked under the CEO and Business Planning manager to help with data models for finance, sales and reports for investors during the round.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-arrow right" aria-label="Next" onclick="showProduct(1)">&#8594;</button>
+              </div>
+          </div>
+      </section>
       <section class="section features">
         <div class="container">
           <div class="section-head">
@@ -183,7 +215,16 @@
             })
             .catch(error => console.error('Error loading footer:', error));
         }
-      });
+        });
+
+      // Carousel logic for product news
+      window.showProduct = function(direction) {
+        const cards = document.querySelectorAll('.carousel-track .product-card');
+        let current = Array.from(cards).findIndex(card => card.style.display !== 'none');
+        cards[current].style.display = 'none';
+        let next = (current + direction + cards.length) % cards.length;
+        cards[next].style.display = '';
+      };;
     </script>
   </body>
 </html>
