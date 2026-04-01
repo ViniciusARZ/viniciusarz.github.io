@@ -468,6 +468,15 @@ a{color:inherit;text-decoration:none}
   gap: 1rem;
   flex-wrap: wrap;
 }
+.footer-brand .brand{
+  display:flex;
+  align-items:center;
+  gap:.625rem;
+  flex-wrap:nowrap;
+}
+.footer-brand .brand-name{
+  white-space:nowrap;
+}
 
 /* Right-align socials on desktop; keep your existing spacing */
 .footer-socials {
