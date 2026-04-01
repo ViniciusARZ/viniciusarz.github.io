@@ -2,221 +2,538 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Decision Intelligence & Market Research by Vinicius ARZ">
-    <meta property="og:title" content="VARZ Decisions">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#121212">
+    <meta
+      name="description"
+      content="Decision Intelligence & Market Research by Vinicius ARZ"
+    />
+    <meta property="og:title" content="VARZ Decisions" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#121212" />
 
-    <title>Home</title>
+    <title>VARZ Decisions</title>
 
-    <!-- Fonts (Inter, Onest) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Mount point -->
     <div id="site-header"></div>
 
-    <!-- Header loader -->
-    <script>
-    (async () => {
-      const mount = document.getElementById('site-header');
-      if (!mount) return;
-
-      const res = await fetch('header.html');
-      mount.innerHTML = await res.text();
-
-      const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-      mount.querySelectorAll('nav a').forEach(a => {
-        if ((a.getAttribute('href') || '').toLowerCase() === path) a.classList.add('active');
-      });
-
-      const btn = mount.querySelector('.nav-toggle');   // matches header.html
-      const nav = mount.querySelector('#site-nav');     // matches header.html
-      if (!btn || !nav) return;
-
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open', !expanded);
-      });
-
-      // optional: close menu after clicking a link (mobile)
-      nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          btn.setAttribute('aria-expanded', 'false');
-          nav.classList.remove('open');
-        });
-      });
-    })();
-    </script>
-
     <main id="main">
-      <!-- Hero -->
-      <section class="section hero">
+      <section id="home" class="section hero page-section">
         <div class="container grid-2">
           <div class="stack gap-l">
             <span class="eyebrow">Decision Intelligence & Market Research</span>
-            <h1 class="display">Building solutions to harness the power of Decision Intelligence</h1>
-            <p class="lead">Multidisciplinary AI/ML Manager. More than 5 years working with Machine Learning, Research, and Project Management for international businesses. Specialized in lookalike and recommendation models, building products for marketers, insights and strategy teams.<br> Fluent and Working in English, Spanish, and Portuguese</p>
+            <h1 class="display">
+              Building solutions to harness the power of Decision Intelligence
+            </h1>
+            <p class="lead">
+              Multidisciplinary AI/ML Manager. More than 5 years working with
+              Machine Learning, Research, and Project Management for
+              international businesses. Specialized in lookalike and
+              recommendation models, building products for marketers, insights
+              and strategy teams.<br />
+              Fluent and working in English, Spanish, and Portuguese.
+            </p>
             <div class="actions">
-              <a class="btn primary" href="about.html">About Me</a>
+              <a class="btn primary" href="#about">About Me</a>
             </div>
           </div>
           <div class="media hero-media" role="img" aria-label="Profile picture">
             <img src="assets/profile_pic.jpg" alt="Profile picture" />
             <div class="hero-socials">
-              <a href="https://www.linkedin.com/in/viniciusarz/?utm_source=varzdecisions.com" target="_blank"><img src="assets/linkedin.png" alt="LinkedIn" width="15" /></a>
-              <a href="mailto:btvarz@gmail.com"><img src="assets/email.png" alt="Email" width="15" /></a>
-              <a href="https://viniciusarz.medium.com/?utm_source=varzdecisions.com" target="_blank"><img src="assets/medium2.png" alt="Medium" width="15" /></a>
-              <a href="https://github.com/ViniciusARZ/?utm_source=varzdecisions.com" target="_blank"><img src="assets/github.png" alt="GitHub" width="15" /></a>
-              <a href="https://orcid.org/0000-0001-8484-1269/?utm_source=varzdecisions.com" target="_blank"><img src="assets/orcid.png" alt="ORCID" width="15" /></a>
-              <a href="http://lattes.cnpq.br/3185350427378710/?utm_source=varzdecisions.com" target="_blank"><img src="assets/lattes.png" alt="Lattes Curriculum" width="15" /></a>
+              <a
+                href="https://www.linkedin.com/in/viniciusarz/?utm_source=varzdecisions.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="assets/linkedin.png" alt="LinkedIn" width="15"
+              /></a>
+              <a href="mailto:btvarz@gmail.com"
+                ><img src="assets/email.png" alt="Email" width="15"
+              /></a>
+              <a
+                href="https://viniciusarz.medium.com/?utm_source=varzdecisions.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="assets/medium2.png" alt="Medium" width="15"
+              /></a>
+              <a
+                href="https://github.com/ViniciusARZ/?utm_source=varzdecisions.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="assets/github.png" alt="GitHub" width="15"
+              /></a>
+              <a
+                href="https://orcid.org/0000-0001-8484-1269/?utm_source=varzdecisions.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="assets/orcid.png" alt="ORCID" width="15"
+              /></a>
+              <a
+                href="http://lattes.cnpq.br/3185350427378710/?utm_source=varzdecisions.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="assets/lattes.png" alt="Lattes Curriculum" width="15"
+              /></a>
             </div>
           </div>
-      </section>
-
-      <!-- Single Card Section -->
-      <section class="section">
-        <div class="container">
-          <article class="card">
-            <h3 class="h3">Worked with Fortune 500 and Key Players</h3>
-            <p>Developed projects and solutions for Disney, Ford, Amazon, Best Buy, U.S. Bank, Lowe's, Victoria's Secret, Red Bull, Celsius, Haleon, NHL, Adsmovil and many more — plus venture capitals such as Positive Ventures, ALIVE, and DILA Capital.</p>
-          </article>
         </div>
       </section>
 
-
-      <!-- Features Grid -->
-      <section class="section features">
+      <section id="about" class="section features page-section">
         <div class="container">
           <div class="section-head">
             <h2 class="h2">About Me</h2>
-            <p class="muted">International Relations bachelor, self-taught coding and statistics, later got a post graduation degree in Computer Science and currently pursuing my Masters in Computational Intelligence. I have worked in Data Science for international businesses, focusing on machine learning, segmentation models and more recently in Artificial Intelligence with GenAI workflows. My main role is leading the data science and engineering teams on helping brands understand consumer behavior and drive favorability and purchase intent.</p>
+            <p class="muted">
+              International Relations bachelor, self-taught coding and
+              statistics, later got a post graduation degree in Computer Science
+              and currently pursuing my Masters in Computational Intelligence. I
+              have worked in Data Science for international businesses, focusing
+              on machine learning, segmentation models and more recently in
+              Artificial Intelligence with GenAI workflows. My main role is
+              leading the data science and engineering teams on helping brands
+              understand consumer behavior and drive favorability and purchase
+              intent.
+            </p>
           </div>
           <div class="grid-3 cards">
             <article class="card">
-              <div class="icon-circle"><img src="assets/statistics.png" alt=""></div>
+              <div class="icon-circle">
+                <img src="assets/statistics.png" alt="" />
+              </div>
               <h3 class="h3">Machine Learning</h3>
-              <p>Developed an AutoML Pipeline to automate model tuning, cross-validation, and evaluation with a custom composite score and penalty system. Allowing classification model training and a similarity search classifier algorithm written from scratch for research data.</p>
+              <p>
+                Developed an AutoML Pipeline to automate model tuning,
+                cross-validation, and evaluation with a custom composite score
+                and penalty system. Allowing classification model training and a
+                similarity search classifier algorithm written from scratch for
+                research data.
+              </p>
             </article>
             <article class="card">
-              <div class="icon-circle"><img src="assets/zoom_lupa.png" alt=""></div>
+              <div class="icon-circle">
+                <img src="assets/zoom_lupa.png" alt="" />
+              </div>
               <h3 class="h3">Artificial Intelligence</h3>
-              <p>Designed and shipped agentic workflows: research summarization for a large-scale insights dashboard, complex RAG on internal content with time-sensitive retrieval for reliability and clear actions, and text-to-SQL so non-technical users can query data in natural language.</p>
+              <p>
+                Designed and shipped agentic workflows: research summarization
+                for a large-scale insights dashboard, complex RAG on internal
+                content with time-sensitive retrieval for reliability and clear
+                actions, and text-to-SQL so non-technical users can query data
+                in natural language.
+              </p>
             </article>
             <article class="card">
-              <div class="icon-circle"><img src="assets/cloud.png" alt=""></div>
+              <div class="icon-circle">
+                <img src="assets/cloud.png" alt="" />
+              </div>
               <h3 class="h3">API and Package Development</h3>
-              <p>Developed multiple internal packages (wrappers, ETLs) for applying Machine Learning and AI into production ready solutions. Delivery in FastAPI deployments in AWS Lambda, EC2 instances and Airflow to enable Backend teams to integrate it solutions into the product.</p>
+              <p>
+                Developed multiple internal packages (wrappers, ETLs) for
+                applying Machine Learning and AI into production ready
+                solutions. Delivery in FastAPI deployments in AWS Lambda, EC2
+                instances and Airflow to enable Backend teams to integrate it
+                solutions into the product.
+              </p>
+            </article>
+          </div>
+            <article class="card about-highlight">
+              <h3 class="h3">Worked with Fortune 500 and Key Players</h3>
+              <p>
+                Developed projects and solutions for Disney, Ford, Amazon, Best
+                Buy, U.S. Bank, Lowe's, Victoria's Secret, Red Bull, Celsius,
+                Haleon, NHL, Adsmovil and many more, plus venture capitals such
+                as Positive Ventures, ALIVE, and DILA Capital.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section writing">
-      <div class="container">
-        <h2 class="h2">Publications</h2>
-
-        <!-- Academic -->
-        <h3 class="h3" style="margin-top: var(--space-2xl);">Academic Publications</h3>
-        <ul class="list-pubs">
-          <li>
-            <a href="https://www.even3.com.br/anais/xxxiicicunesp/285188-religiao-politica-e-retorica--contornos-da-relacao-entre-fe-e-razao-no-estado-civil-de-thomas-hobbes/" target="_blank" rel="noopener">
-              Religion, Politics, and Rhetoric: Contours of the Relationship between Faith and Reason in Thomas Hobbes’s Civil State
-            </a>
-            <div class="pub-meta small muted">XXXII UNESP Scientific Initiation Congress · 2021</div>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/watch?v=Z4myyS8PcbU&t=1390s" target="_blank" rel="noopener">
-              Faith and Reason in the Civil State of Hobbes
-            </a>
-            <div class="pub-meta small muted">VII International Thomas Hobbes Congress · 2021</div>
-          </li>
-          <li>
-            <a href="https://bv.fapesp.br/pt/pesquisador/710502/vinicius-antonio-ramos-zecca/" target="_blank" rel="noopener">
-              FAPESP Funded Research — Religion and Rhetoric: Relationship between Faith and Reason
-            </a>
-            <div class="pub-meta small muted">FAPESP Scholarship · 2021</div>
-          </li>
-          <li>
-            <span class="pub-title">Hobbesian Passions and Instruments of Civil Obedience: State Duality in the Israeli–Palestinian Political Conflict</span>
-            <div class="pub-meta small muted">UNESP — International Affairs Thesis · 2022</div>
-          </li>
-          <li>
-            <a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/37113" target="_blank" rel="noopener">
-              Recommendation System for Defining Competitive Teams in eSports: Experimental Analysis of CBLOL
-            </a>
-            <div class="pub-meta small muted">XXIV Brazilian Symposium on Games and Digital Entertainment (SBGames) · 2025</div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-
-
-      <section class="section content">
+      <section id="projects" class="section page-section">
         <div class="container">
-          <h2 class="h2">Content</h2>
+          <div class="section-head">
+            <h2 class="h2">Major Releases I Worked On</h2>
+            <p class="muted">
+              Public launches and news coverage tied to products, workflows, and
+              initiatives I helped build, lead, or ship.
+            </p>
+          </div>
+          <div class="release-slider" data-slider>
+            <button
+              class="slider-arrow"
+              type="button"
+              aria-label="Previous release"
+              data-slider-direction="-1"
+            >
+              &#8592;
+            </button>
+            <div class="release-viewport">
+              <article class="release-slide is-active">
+                <a
+                  class="release-media"
+                  href="https://aijourn.com/beyond-the-what-why-ai-must-go-deeper-to-unlock-culturally-grounded-consumer-insights/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/PR/collage_askcollage_aijournal.png"
+                    alt="Ask Collage coverage on The AI Journal"
+                  />
+                </a>
+                <div class="release-copy">
+                  <h3 class="h3">
+                    <a
+                      href="https://aijourn.com/beyond-the-what-why-ai-must-go-deeper-to-unlock-culturally-grounded-consumer-insights/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Ask Collage</a
+                    >
+                  </h3>
+                  <p>
+                    AI agentic workflow I managed and developed from scratch for
+                    a chat experience with a time-bounded RAG pipeline and
+                    serverless deployment.
+                  </p>
+                </div>
+              </article>
 
-          <h3 class="h3">Open Projects</h3>
+              <article class="release-slide">
+                <a
+                  class="release-media"
+                  href="https://www.globenewswire.com/news-release/2025/10/28/3175486/0/en/Introducing-Ask-Collage-the-Next-Level-of-AI-Powered-Cultural-Intelligence.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/PR/collage_askcollage_globenewswire.png"
+                    alt="Ask Collage coverage on GlobeNewswire"
+                  />
+                </a>
+                <div class="release-copy">
+                  <h3 class="h3">
+                    <a
+                      href="https://www.globenewswire.com/news-release/2025/10/28/3175486/0/en/Introducing-Ask-Collage-the-Next-Level-of-AI-Powered-Cultural-Intelligence.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Ask Collage Release</a
+                    >
+                  </h3>
+                  <p>
+                    AI workflow I led and developed from scratch for a
+                    production chat product with grounded retrieval and clear,
+                    reliable outputs.
+                  </p>
+                </div>
+              </article>
+
+              <article class="release-slide">
+                <a
+                  class="release-media"
+                  href="https://www.alive-ventures.com/post/slang-closes-a-us-14-million-series-a-funding-round-led-by-dila-capital-and-alive-ventures"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="assets/PR/slang_seriesa.png" alt="Slang Series A Round" />
+                </a>
+                <div class="release-copy">
+                  <h3 class="h3">
+                    <a
+                      href="https://www.alive-ventures.com/post/slang-closes-a-us-14-million-series-a-funding-round-led-by-dila-capital-and-alive-ventures"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Slang Series A Round</a
+                    >
+                  </h3>
+                  <p>
+                    Worked under the CEO and Business Planning manager to
+                    support financial, sales, and investor reporting models
+                    during the funding round.
+                  </p>
+                </div>
+              </article>
+
+              <article class="release-slide">
+                <a
+                  class="release-media"
+                  href="https://www.mrweb.com/drno/news37421.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/PR/collage_audiences.png"
+                    alt="Audience Profiles release"
+                  />
+                </a>
+                <div class="release-copy">
+                  <h3 class="h3">
+                    <a
+                      href="https://www.mrweb.com/drno/news37421.htm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Audience Profiles</a
+                    >
+                  </h3>
+                  <p>
+                    Built, designed, and managed the ML pipelines that enabled
+                    custom audiences from research data, serving more than 4,000
+                    audiences to Fortune 500 clients.
+                  </p>
+                </div>
+              </article>
+
+              <article class="release-slide">
+                <a
+                  class="release-media"
+                  href="https://www.globenewswire.com/news-release/2025/07/16/3116740/0/en/Collage-Group-Unveils-New-Growth-Audience-Innovations-that-Give-Brands-an-Unparalleled-Advantage-in-Building-Relevance-while-Achieving-Higher-Media-Efficiency.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/PR/collage_growth_audiences.png"
+                    alt="Growth Audiences release"
+                  />
+                </a>
+                <div class="release-copy">
+                  <h3 class="h3">
+                    <a
+                      href="https://www.globenewswire.com/news-release/2025/07/16/3116740/0/en/Collage-Group-Unveils-New-Growth-Audience-Innovations-that-Give-Brands-an-Unparalleled-Advantage-in-Building-Relevance-while-Achieving-Higher-Media-Efficiency.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Growth Audiences Release</a
+                    >
+                  </h3>
+                  <p>
+                    Built and designed the methodology around Growth Audiences,
+                    along with the product that enables them for clients.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <button
+              class="slider-arrow"
+              type="button"
+              aria-label="Next release"
+              data-slider-direction="1"
+            >
+              &#8594;
+            </button>
+          </div>
+          <div class="slider-dots" aria-label="Release navigation">
+            <button class="slider-dot is-active" type="button" aria-label="Go to release 1" data-slider-dot="0"></button>
+            <button class="slider-dot" type="button" aria-label="Go to release 2" data-slider-dot="1"></button>
+            <button class="slider-dot" type="button" aria-label="Go to release 3" data-slider-dot="2"></button>
+            <button class="slider-dot" type="button" aria-label="Go to release 4" data-slider-dot="3"></button>
+            <button class="slider-dot" type="button" aria-label="Go to release 5" data-slider-dot="4"></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="section writing page-section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Insights & Content</h2>
+            <p class="muted">
+              Academic work, open projects, writing, and speaking collected in
+              one place.
+            </p>
+          </div>
+
+          <h3 class="h3">Academic Publications</h3>
+          <ul class="list-pubs">
+            <li>
+              <a
+                href="https://www.even3.com.br/anais/xxxiicicunesp/285188-religiao-politica-e-retorica--contornos-da-relacao-entre-fe-e-razao-no-estado-civil-de-thomas-hobbes/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Religion, Politics, and Rhetoric: Contours of the Relationship
+                between Faith and Reason in Thomas Hobbes’s Civil State
+              </a>
+              <div class="pub-meta small muted">
+                XXXII UNESP Scientific Initiation Congress · 2021
+              </div>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/watch?v=Z4myyS8PcbU&t=1390s"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Faith and Reason in the Civil State of Hobbes
+              </a>
+              <div class="pub-meta small muted">
+                VII International Thomas Hobbes Congress · 2021
+              </div>
+            </li>
+            <li>
+              <a
+                href="https://bv.fapesp.br/pt/pesquisador/710502/vinicius-antonio-ramos-zecca/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                FAPESP Funded Research — Religion and Rhetoric: Relationship
+                between Faith and Reason
+              </a>
+              <div class="pub-meta small muted">
+                FAPESP Scholarship · 2021
+              </div>
+            </li>
+            <li>
+              <span class="pub-title"
+                >Hobbesian Passions and Instruments of Civil Obedience: State
+                Duality in the Israeli–Palestinian Political Conflict</span
+              >
+              <div class="pub-meta small muted">
+                UNESP — International Affairs Thesis · 2022
+              </div>
+            </li>
+            <li>
+              <a
+                href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/37113"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Recommendation System for Defining Competitive Teams in eSports:
+                Experimental Analysis of CBLOL
+              </a>
+              <div class="pub-meta small muted">
+                XXIV Brazilian Symposium on Games and Digital Entertainment
+                (SBGames) · 2025
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="h3" style="margin-top: var(--space-2xl)">Open Projects</h3>
           <div class="repo-grid">
             <div class="item">
-              <a class="embed is-16x9" href="https://github.com/ViniciusARZ/figurefeed-ai" target="_blank" rel="noopener">
-                <img src="https://opengraph.githubassets.com/1/ViniciusARZ/figurefeed-ai" alt="figurefeed-ai repository card">
+              <a
+                class="embed is-16x9"
+                href="https://github.com/ViniciusARZ/figurefeed-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://opengraph.githubassets.com/1/ViniciusARZ/figurefeed-ai"
+                  alt="figurefeed-ai repository card"
+                />
               </a>
               <h4 class="embed-title">figurefeed-ai</h4>
             </div>
 
             <div class="item">
-              <a class="embed is-16x9" href="https://github.com/ViniciusARZ/skiptrace-realstate-optimization" target="_blank" rel="noopener">
-                <img src="https://opengraph.githubassets.com/1/ViniciusARZ/skiptrace-realstate-optimization" alt="skiptrace-realstate-optimization repository card">
+              <a
+                class="embed is-16x9"
+                href="https://github.com/ViniciusARZ/skiptrace-realstate-optimization"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://opengraph.githubassets.com/1/ViniciusARZ/skiptrace-realstate-optimization"
+                  alt="skiptrace-realstate-optimization repository card"
+                />
               </a>
               <h4 class="embed-title">skiptrace-realstate-optimization</h4>
             </div>
           </div>
 
-          <h3 class="h3">Medium</h3>
-          <ul class="list-links">
-            <li><a href="https://viniciusarz.medium.com/mastering-similarity-metrics-for-lookalike-modelling-67e43729ace8" target="_blank" rel="noopener">Mastering Similarity Metrics for Lookalike Modelling</a></li>
-            <li><a href="https://medium.com/snowflake/how-to-win-in-enterprise-ai-snowflake-cortex-for-scaled-ai-and-mlops-30d7d5bce19c" target="_blank" rel="noopener">How to Win at Enterprise AI: Snowflake Cortex for Scaled AI and MLOps</a></li>
-            <li><a href="https://viniciusarz.medium.com/mastering-correlation-analysis-for-data-science-pearson-vs-spearman-cb1cc0a7b456" target="_blank" rel="noopener">Mastering Correlation Analysis for Data Science: Pearson vs Spearman</a></li>
-            <li><a href="https://viniciusarz.medium.com/" target="_blank" rel="noopener">Other articles here</a></li>
-          </ul>
+          <a
+            class="medium-feature"
+            href="https://viniciusarz.medium.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="medium-feature-copy">
+              <span class="eyebrow">Writing</span>
+              <h4 class="h3">Medium Blog</h4>
+              <p class="muted">
+                Articles on machine learning, AI, analytics, and decision
+                intelligence.
+              </p>
+            </div>
+            <div class="medium-feature-mark" aria-hidden="true">
+              <img src="assets/medium2.png" alt="" class="medium-feature-icon" />
+            </div>
+          </a>
 
-          <h3 class="h3" style="margin-top: var(--space-2xl);">Speaking</h3>
+          <h3 class="h3" style="margin-top: var(--space-2xl)">Speaking</h3>
           <div class="content-grid">
             <div class="item">
               <div class="embed is-16x9">
-                <iframe src="https://www.youtube.com/embed/NdoY6GFVgtU" title="Awari Talks - Introduction to Decision Intelligence" allowfullscreen loading="lazy"></iframe>
+                <iframe
+                  src="https://www.youtube.com/embed/NdoY6GFVgtU"
+                  title="Awari Talks - Introduction to Decision Intelligence"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
               </div>
-              <h4 class="embed-title"><a href="https://www.youtube.com/watch?v=NdoY6GFVgtU" target="_blank" rel="noopener">Awari Talks - Introduction to Decision Intelligence</a></h4>
+              <h4 class="embed-title">
+                <a
+                  href="https://www.youtube.com/watch?v=NdoY6GFVgtU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Awari Talks - Introduction to Decision Intelligence</a
+                >
+              </h4>
             </div>
 
             <div class="item">
               <div class="embed is-16x9">
-                <iframe src="https://open.spotify.com/embed/episode/6sKJpKjs3yxEi7SpNzlreQ/video?utm_source=generator" title="Awari Master Data Analysis" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe
+                  src="https://open.spotify.com/embed/episode/6sKJpKjs3yxEi7SpNzlreQ/video?utm_source=generator"
+                  title="Awari Master Data Analysis"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
               </div>
-              <h4 class="embed-title"><a href="https://open.spotify.com/episode/6sKJpKjs3yxEi7SpNzlreQ" target="_blank" rel="noopener">Awari Master Data Analysis</a></h4>
+              <h4 class="embed-title">
+                <a
+                  href="https://open.spotify.com/episode/6sKJpKjs3yxEi7SpNzlreQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Awari Master Data Analysis</a
+                >
+              </h4>
             </div>
 
             <div class="item">
-              <a class="embed is-16x9" href="https://www.linkedin.com/feed/update/urn:li:share:7094371770639560705/" target="_blank" rel="noopener">
-                <img src="assets/speaking_awari_linkedin.png" alt="Awari Talks - How to transform Data into Strategy">
+              <a
+                class="embed is-16x9"
+                href="https://www.linkedin.com/feed/update/urn:li:share:7094371770639560705/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/speaking_awari_linkedin.png"
+                  alt="Awari Talks - How to transform Data into Strategy"
+                />
               </a>
-              <h4 class="embed-title">Awari Talks - How to Transform Data into Strategy</h4>
+              <h4 class="embed-title">
+                Awari Talks - How to Transform Data into Strategy
+              </h4>
             </div>
 
             <div class="item">
-              <a class="embed is-16x9" href="https://www.linkedin.com/feed/update/urn:li:share:7106301544949518337/" target="_blank" rel="noopener">
-                <img src="assets/speaking_unesp_linkedin.png" alt="UNESP - Career in Data">
+              <a
+                class="embed is-16x9"
+                href="https://www.linkedin.com/feed/update/urn:li:share:7106301544949518337/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="assets/speaking_unesp_linkedin.png"
+                  alt="UNESP - Career in Data"
+                />
               </a>
               <h4 class="embed-title">UNESP - Career in Data</h4>
             </div>
@@ -224,26 +541,279 @@
         </div>
       </section>
 
-      <!-- CTA Banner -->
-      <section class="section cta">
-        <div class="container cta-inner">
-          <h2 class="h2">Open to collaborations and new opportunities</h2>
-          <a class="btn primary" href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=viniciusarz" aria-label="Contact">Contact</a>
+      <section id="experience" class="section features page-section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Experience</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">
+                  <a
+                    href="https://www.collagegroup.com/?utm_source=varzdecisions.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Collage Group</a
+                  >
+                </h3>
+                <p class="muted">
+                  AI / ML Manager
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">Jan 2026 - Present</span>
+                </p>
+                <p>
+                  Technical Engineering Manager for the Data Science and
+                  Engineering team. Responsible for the methodological
+                  decisions, evaluation standards, coaching and guiding a team
+                  with one Data Analyst, two Data Scientists and one Data
+                  Engineer. Hands on work on more strategic projects, and
+                  helping product with requirements, scoping, and implementation
+                  strategy, along with capacity planning and product decisions.
+                </p>
+                <p class="muted" style="margin-top: 1rem">
+                  Data Scientist
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">Aug 2023 - Dec 2025</span>
+                </p>
+                <p>
+                  Senior and Team Lead, worked on a cross-functional role
+                  directly under the CTO. Leading Data Science decisions,
+                  initiatives and projects. Developed the entire Machine
+                  Learning workflow to support 4000+ Custom Audiences (leading
+                  upsell product in 2024) and AI initiatives with production
+                  ready features.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">
+                  <a
+                    href="https://www.fiap.com.br/?utm_source=varzdecisions.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >FIAP</a
+                  >
+                </h3>
+                <p class="muted">
+                  Professor, Decision Intelligence
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">Feb 2024 – Sep 2024</span>
+                </p>
+                <p>
+                  Personally invited by FIAP's MBA Programs Coordinator to
+                  teach Decision Intelligence in the MBA Program of Digital
+                  Transformation Cognitive Business. Led the discipline,
+                  covering Decision Science and related skills for professionals
+                  in digital transformation.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">
+                  <a
+                    href="https://www.awari.com.br/?utm_source=varzdecisions.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Awari</a
+                  >
+                </h3>
+                <p class="muted">
+                  Data Science & Analytics Mentor
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">May 2023 – Mar 2025</span>
+                </p>
+                <p>
+                  Mentored 40+ students 1-on-1, helping them achieve career
+                  goals and new positions in Data Analytics, Data Science, and
+                  Data Engineering. Provided career and development guidance,
+                  answered questions, and shared knowledge to support mentees'
+                  next steps in the data field.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">
+                  <a
+                    href="https://www.slang.com/?utm_source=varzdecisions.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Slang</a
+                  >
+                </h3>
+                <p class="muted">
+                  Senior Business Planning & Analytics Analyst
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">July 2021 – July 2023</span>
+                </p>
+                <p>
+                  Started in a junior position and helped found the Business
+                  Planning & Analytics area. Grew to a senior role, responsible
+                  for strategy design and planning with directors of Finance,
+                  Marketing, and Business Development. Developed new processes,
+                  CRM, acquisition funnel, and digital marketing structure,
+                  performing cross-source analytics to improve decision-making.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3 class="h3">
+                  <a
+                    href="https://www.orbe-ri.com/?utm_source=varzdecisions.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Orbe Consultoria Internacional</a
+                  >
+                </h3>
+                <p class="muted">
+                  Market Intelligence
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">April 2019 – August 2020</span>
+                </p>
+                <p>
+                  Worked while pursuing a bachelor's in International Affairs,
+                  developing solutions to prospect and research which countries
+                  had the best probability of success for each client's product
+                  and audience. Developed the OKR system and implemented the
+                  digital marketing strategy that led to 3 major awards in the
+                  Junior Enterprise field.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      <section id="education" class="section features page-section">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2">Education</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2025 - Present</div>
+              <div class="timeline-content">
+                <h3 class="h3">Masters in Computer Science</h3>
+                <p class="muted">
+                  Universidade Estadual Paulista (UNESP) - Institute of
+                  Biosciences, Letters, and Exact Sciences (IBILCE - UNESP)
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">2025 - Present</span>
+                </p>
+                <p>
+                  Master of Science program in Computer Science offered by the
+                  Sao Paulo State University (UNESP), one of Brazil's leading
+                  public universities. Developed within the Postgraduate Program
+                  in Computer Science (PPGCC), which emphasizes research in
+                  applied computing and systems.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2024 - 2025</div>
+              <div class="timeline-content">
+                <h3 class="h3">MBA Focused in Data Science</h3>
+                <p class="muted">
+                  Universidade de Sao Paulo (USP) - Institute of Mathematical
+                  and Computer Sciences (ICMC- USP)
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">2024 - 2025</span>
+                </p>
+                <p>
+                  MBA Program coordinated by the Research Center of Applied
+                  Mathematics (CeMEAI - USP) in the Institute of Mathematical
+                  and Computer Sciences (ICMC- USP), one of the most renewed
+                  universities in Brazil and Latin America.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020 - 2021</div>
+              <div class="timeline-content">
+                <h3 class="h3">Exchange Program in Statistics</h3>
+                <p class="muted">
+                  Universidade de Campinas (UNICAMP) - Faculty of Applied
+                  Sciences
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">2020 - 2021</span>
+                </p>
+                <p>
+                  Selected by an Exchange Program as Special Student. Studied R
+                  (Tidyverse, MongoDBLite, SQLite, ggplot2) and Python (pandas,
+                  numpy, matplot) for statistical analysis and testing.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020</div>
+              <div class="timeline-content">
+                <h3 class="h3">
+                  Specialization Course in Advanced Business Analytics
+                </h3>
+                <p class="muted">
+                  University of Colorado, Boulder (Online)
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">2020</span>
+                </p>
+                <p>
+                  Business Analytics online specialization focused on solving
+                  problems with statistics using SQL and data modelling.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2019 - 2022</div>
+              <div class="timeline-content">
+                <h3 class="h3">Bachelors in International Affairs</h3>
+                <p class="muted">
+                  Universidade do Estado de Sao Paulo (UNESP) - Faculty of Human
+                  and Social Sciences
+                  <span aria-hidden="true" style="padding: 0 0.5em">&#124;</span>
+                  <span class="timeline-date">2019 - 2022</span>
+                </p>
+                <p>
+                  Founded a Quantitative Methods study group to study statistics
+                  and data analysis in research. Co-founded the Research
+                  Nucleus on Ethics, Philosophy and Social Theories. FAPESP
+                  scholarship for research in political science, philosophy, and
+                  religion in Thomas Hobbes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section cta page-section">
+        <div class="container cta-inner">
+          <div class="cta-copy">
+            <span class="eyebrow">Contact</span>
+            <h2 class="h2">Open to collaborations and new opportunities</h2>
+            <p class="muted">
+              Available for strategic AI, machine learning, research, and
+              product conversations across consulting, advisory, and full-time
+              opportunities.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a
+              class="btn primary"
+              href="https://www.linkedin.com/in/viniciusarz/"
+              aria-label="Contact on LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Connect on LinkedIn</a
+            >
+            <a class="btn ghost" href="mailto:btvarz@gmail.com">Email</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div id="site-footer"></div>
-    <script>
-    (async function(){
-      const mount = document.getElementById('site-footer');
-      if (!mount) return;
-      const res = await fetch('footer.html');
-      mount.innerHTML = await res.text();
-      const y = mount.querySelector('#year');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
-    </script>
   </body>
 </html>
