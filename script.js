@@ -12,64 +12,6 @@ async function loadPartial(targetId, file) {
   }
 }
 
-function setupNavigation(headerMount) {
-  if (!headerMount) return;
-
-  const toggle = headerMount.querySelector(".nav-toggle");
-  const nav = headerMount.querySelector("#site-nav");
-  const links = nav ? Array.from(nav.querySelectorAll('a[href^="#"]')) : [];
-  const sections = links
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
-
-  const closeMenu = () => {
-    if (!toggle || !nav) return;
-    toggle.setAttribute("aria-expanded", "false");
-    nav.classList.remove("open");
-    document.body.classList.remove("nav-open");
-  };
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!expanded));
-      nav.classList.toggle("open", !expanded);
-      document.body.classList.toggle("nav-open", !expanded);
-    });
-  }
-
-  const setActiveLink = () => {
-    const currentHash = window.location.hash || "#home";
-    let activeId = currentHash;
-
-    if (!window.location.hash) {
-      const offset = 96;
-      for (const section of sections) {
-        if (window.scrollY + offset >= section.offsetTop) {
-          activeId = `#${section.id}`;
-        }
-      }
-    }
-
-    links.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === activeId);
-    });
-  };
-
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      window.requestAnimationFrame(() => {
-        setActiveLink();
-        closeMenu();
-      });
-    });
-  });
-
-  window.addEventListener("hashchange", setActiveLink);
-  window.addEventListener("scroll", setActiveLink, { passive: true });
-  setActiveLink();
-}
-
 function setupFooter(footerMount) {
   if (!footerMount) return;
   const year = footerMount.querySelector("#year");
@@ -132,12 +74,7 @@ function setupReleaseSlider() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const [headerMount, footerMount] = await Promise.all([
-    loadPartial("site-header", "header.html"),
-    loadPartial("site-footer", "footer.html"),
-  ]);
-
-  setupNavigation(headerMount);
+  const footerMount = await loadPartial("site-footer", "footer.html");
   setupFooter(footerMount);
   setupReleaseSlider();
 });
