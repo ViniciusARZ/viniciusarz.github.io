@@ -1,10 +1,20 @@
-async function loadPartial(targetId, file) {
+async function loadPartial(targetId, file, pathPrefix = "") {
   const mount = document.getElementById(targetId);
   if (!mount) return null;
 
   try {
     const response = await fetch(file);
     mount.innerHTML = await response.text();
+    if (pathPrefix) {
+      mount.querySelectorAll("[href], [src]").forEach((element) => {
+        ["href", "src"].forEach((attribute) => {
+          const value = element.getAttribute(attribute);
+          if (value && !/^(?:[a-z]+:|\/|#|\/\/)/i.test(value)) {
+            element.setAttribute(attribute, `${pathPrefix}${value}`);
+          }
+        });
+      });
+    }
     return mount;
   } catch (error) {
     console.error(`Error loading ${file}:`, error);
@@ -74,10 +84,9 @@ function setupReleaseSlider() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const footerFile = document.querySelector(".case-study-page")
-    ? "../footer.html"
-    : "footer.html";
-  const footerMount = await loadPartial("site-footer", footerFile);
+  const pathPrefix = document.querySelector(".case-study-page") ? "../" : "";
+  const footerFile = `${pathPrefix}footer.html`;
+  const footerMount = await loadPartial("site-footer", footerFile, pathPrefix);
   setupFooter(footerMount);
   setupReleaseSlider();
 });
