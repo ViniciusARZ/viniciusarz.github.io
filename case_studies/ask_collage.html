@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How I shaped Ask Collage into a cultural strategy agent that turns years of research into grounded, actionable answers." />
+    <meta property="og:title" content="Ask Collage – VARZ Decisions" />
+    <meta property="og:type" content="article" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="canonical" href="../case_studies/ask_collage.html" />
+    <title>Ask Collage – VARZ Decisions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <style>
+      .case-study-inline-link {
+        color: var(--primary);
+        text-decoration: underline;
+        text-decoration-thickness: .08em;
+        text-underline-offset: .15em;
+      }
+      .case-study-inline-link:hover { color: var(--text); }
+      .case-study-inline-link:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main id="main" class="case-study-page">
+      <div class="container">
+        <a class="back-link" href="../index.html#projects">← Back to Projects</a>
+        <header class="case-study-hero">
+          <span class="eyebrow">Selected case study · Cultural strategy agent</span>
+          <h1 class="display">Ask Collage</h1>
+          <p class="case-study-intro"><a class="case-study-inline-link" href="https://www.collagegroup.com/ask-collage" target="_blank" rel="noopener noreferrer">Ask Collage</a> is an AI cultural strategy assistant that draws on years of research data to answer insight, marketing, and strategy questions.</p>
+          <div class="case-study-facts" aria-label="Case study overview">
+            <div><span class="eyebrow">Focus</span><strong>Research synthesis for strategic decisions</strong></div>
+            <div><span class="eyebrow">Result</span><strong>Main product-interest driver for clients; 120% of the Q1 new-business goal</strong></div>
+          </div>
+        </header>
+
+        <div class="case-study-content">
+          <section class="case-study-section">
+            <span class="eyebrow">Problem</span>
+            <h2 class="h2">Insights existed, but access depended on already knowing where to look.</h2>
+            <p>Years of cultural research lived across posts, PDFs, presentations, webinar transcripts and survey data. Users needed to ask an insight question in natural language and receive a useful synthesis without identifying a specific report or navigating several pages to find it.</p>
+          </section>
+
+          <section class="case-study-section">
+            <span class="eyebrow">Solution</span>
+            <h2 class="h2">Building the intelligence layer.</h2>
+            <p>The product had to do more than find a matching passage. I shaped the ingestion, synthesis, recommendation and agent workflows so an answer could bring together evidence, explain the strategic signal and open a path into the research behind it.</p>
+            <p>Designed a source-aware RAG pipeline that processes posts and attachments differently to preserve the context each format carries. Built a custom webinar-segmentation algorithm that identifies topic boundaries from semantic similarity, then combined recency-weighted hybrid retrieval and reranking to surface the most relevant research. Validated citations and connected answers to related reports and deep links, keeping the underlying evidence easy to explore.</p>
+            <div class="case-study-grid two-column">
+              <article class="case-study-card"><span class="case-study-step">01</span><h3 class="h3">Research made usable</h3><p>Each content type was processed according to its structure while preserving the source relationships users need to trust and explore an answer.</p></article>
+              <article class="case-study-card"><span class="case-study-step">02</span><h3 class="h3">Conversations kept intact</h3><p>Webinar transcripts were segmented around changes in topic, creating coherent research units instead of arbitrary text windows.</p></article>
+              <article class="case-study-card"><span class="case-study-step">03</span><h3 class="h3">Relevance with context</h3><p>Semantic and lexical signals, recency and custom reranking worked together to select material that was both conceptually close and useful now.</p></article>
+              <article class="case-study-card"><span class="case-study-step">04</span><h3 class="h3">A path beyond the answer</h3><p>Related research connected insight questions to the survey questions, reports, segments and deeplinks that could move the work forward.</p></article>
+            </div>
+            <div class="case-study-detail">
+              <h3 class="h3">Grounded synthesis, not a query box</h3>
+              <p>The underlying system combined source-aware processing, customized webinar segmentation, hybrid retrieval and reranking. Related-content search added relevance filters, deduplication, LLM judging and canonical-term matching so natural-language questions could lead to the right evidence and research destinations.</p>
+              <p>I connected the workflows through a reusable LLM framework and authenticated FastAPI service. The agent could work across research and structured data, return citations, suggest follow-ups and preserve a practical response experience under a considered token-cost tradeoff.</p>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <span class="eyebrow">Value</span>
+            <h2 class="h2">An agent that turns insights into action.</h2>
+            <p>Ask Collage gave clients a direct way to move from an insight question to grounded synthesis, supporting evidence and the next useful research path. It became the main product-interest driver for clients and helped the business achieve 120% of its Q1 new-business goal.</p>
+          </section>
+        </div>
+
+        <div class="case-study-note">
+          <span class="eyebrow">Experience</span>
+          <p><a class="case-study-link" href="../index.html#collage-group-experience">Collage Group experience <span aria-hidden="true">→</span></a></p>
+        </div>
+
+        <div class="case-study-next"><span class="eyebrow">Continue exploring</span><div class="case-study-next-links"><a class="btn ghost" href="custom_audiences.html">Custom Audiences →</a><a class="btn primary" href="brand_measurement.html">Cultural Fluency Economic Model →</a></div></div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

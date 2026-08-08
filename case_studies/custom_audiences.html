@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="../assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A reusable system for predicting and producing custom audiences across survey data." />
+    <meta property="og:title" content="Custom Audiences – VARZ Decisions" />
+    <meta property="og:type" content="article" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="canonical" href="../case_studies/custom_audiences.html" />
+    <title>Custom Audiences – VARZ Decisions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <style>
+      .case-study-inline-link {
+        color: var(--primary);
+        text-decoration: underline;
+        text-decoration-thickness: .08em;
+        text-underline-offset: .15em;
+      }
+      .case-study-inline-link:hover { color: var(--text); }
+      .case-study-inline-link:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main id="main" class="case-study-page">
+      <div class="container">
+        <a class="back-link" href="../index.html#projects">← Back to Projects</a>
+        <header class="case-study-hero">
+          <span class="eyebrow">Selected case study · Research data products</span>
+          <h1 class="display">Custom Audiences</h1>
+          <p class="case-study-intro"><a class="case-study-inline-link" href="https://www.collagegroup.com/fluenci/segmentation-audiences" target="_blank" rel="noopener noreferrer">Custom Audiences</a> are a product designed to predict likely audience membership across survey data and turn it into repeatable audience definitions.</p>
+          <div class="case-study-facts" aria-label="Case study overview">
+            <div><span class="eyebrow">Focus</span><strong>Audience modeling and productization</strong></div>
+            <div><span class="eyebrow">Result</span><strong>5,000+ audiences modeled for Fortune 500 clients; 23% of Upsell MRR in H1 2025</strong></div>
+          </div>
+        </header>
+
+        <div class="case-study-content">
+          <section class="case-study-section">
+            <span class="eyebrow">Problem</span>
+            <h2 class="h2">Anonymous panelists made cross-survey audience building a prediction problem.</h2>
+            <p>The same person could not be directly joined from one survey to another. The system instead learned from an audience label in one survey and predicted likely members in another using demographic and cultural variables shared across datasets.</p>
+          </section>
+
+          <section class="case-study-section">
+            <span class="eyebrow">Solution</span>
+            <h2 class="h2">One system for modeling, profiling, and recurring production.</h2>
+            <p>Designed an internal AutoML pipeline Python package for reusable model training and evaluation across classification and similarity-based lookalike workflows. Built an internal Python package that uses trained models to create audiences in the platform, including the necessary data transformation and ETL workflow. Helped productize recurring audience production and deployment, with sizing that applies survey incidence to ACS population data and BLS Consumer Expenditure estimates adding behavioral context where useful.</p>
+            <div class="case-study-grid two-column">
+              <article class="case-study-card"><span class="case-study-step">01</span><h3 class="h3">Classification modeling</h3><p>An internally designed AutoML pipeline Python package supports reusable model selection, validation, evaluation, and experiment tracking for audience labels across survey data.</p></article>
+              <article class="case-study-card"><span class="case-study-step">02</span><h3 class="h3">Similarity and lookalikes</h3><p>A separate path ranks likely lookalikes using distance and overlap when a clean classification target is not the right fit.</p></article>
+              <article class="case-study-card"><span class="case-study-step">03</span><h3 class="h3">Profiles and deployment</h3><p>An internal Python package uses trained models to create structured, validated, platform-ready audiences, including the data transformation and ETL workflow needed to carry model output into the platform.</p></article>
+              <article class="case-study-card"><span class="case-study-step">04</span><h3 class="h3">Sizing and context</h3><p>Survey incidence and ACS population data support sizing, while BLS Consumer Expenditure estimates add behavioral context.</p></article>
+            </div>
+            <div class="case-study-detail">
+              <h3 class="h3">Reusable model evaluation</h3>
+              <p>The internal AutoML pipeline package handles feature preparation, model selection, validation, evaluation, and experiment tracking so a method can be reused across audience definitions.</p>
+
+              <h3 class="h3">Classification and similarity</h3>
+              <p>The classification path predicts likely audience membership from shared variables. The similarity path ranks lookalikes using distance and overlap when a clean target class is not available. Both workflows use a proprietary scoring and recommendation function: machine-learning evaluation metrics inform a custom score with penalties, helping select models and rank lookalikes for cross-survey use.</p>
+
+              <h3 class="h3">From model to audience product</h3>
+              <p>The internal audience-creation package carries the chosen method into a structured, validated, platform-ready profile, including the data transformation and ETL workflow needed to create audiences in the platform. Recurring production and deployment keeps those audience definitions current, while sizing combines survey incidence with ACS population data. The customized Consumer Expenditure ETL transforms BLS datasets into readable tabular expenditure data, so audience predictions can be applied on top.</p>
+            </div>
+          </section>
+
+          <section class="case-study-section">
+            <span class="eyebrow">Value</span>
+            <h2 class="h2">Reusable audience definitions delivered at client scale.</h2>
+            <p>The system turned questions about audience traits, media behaviors, and locations into reusable client audience definitions. More than 5,000 audiences were modeled for Fortune 500 clients, contributing 23% of Upsell MRR in H1 2025.</p>
+          </section>
+        </div>
+
+        <div class="case-study-note">
+          <span class="eyebrow">Experience</span>
+          <p><a class="case-study-link" href="../index.html#collage-group-experience">Collage Group experience <span aria-hidden="true">→</span></a></p>
+        </div>
+
+        <div class="case-study-next"><span class="eyebrow">Continue exploring</span><div class="case-study-next-links"><a class="btn ghost" href="brand_measurement.html">Cultural Fluency Economic Model →</a><a class="btn primary" href="ask_collage.html">Ask Collage →</a></div></div>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+  </body>
+</html>

@@ -74,7 +74,10 @@ function setupReleaseSlider() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const footerMount = await loadPartial("site-footer", "footer.html");
+  const footerFile = document.querySelector(".case-study-page")
+    ? "../footer.html"
+    : "footer.html";
+  const footerMount = await loadPartial("site-footer", footerFile);
   setupFooter(footerMount);
   setupReleaseSlider();
 });
